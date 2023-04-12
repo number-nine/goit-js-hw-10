@@ -17,20 +17,26 @@ function onInput(e) {
 
     console.log(query);
 
-    fetchCountries(query)
-      .then(data => {
-        console.log('this is then');
-        console.log(data);
-      })
-      .catch(({ message }) => {
-        // console.log('this is catch');
-        // console.log({ message });
-      });
+  fetchCountries(query).then((data) => { 
+    console.log('data:', data);
+    if (data.length > 10) {
+      console.log('Too many matches found. Please enter a more specific name.');
+    } else if (data.length === 1) {
+      console.log('one country');
+    } else {
+      console.log('countries collection');
+    }
+  });
+      
+      
 
 }
 
 function purifyQuery(queryString) {
-    return queryString.trim();
+  return queryString.trim();
+  if (queryString === '') {
+
+  }
 }
 
 

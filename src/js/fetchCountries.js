@@ -9,9 +9,14 @@ export default function fetchCountries(query) {
     },
   };
 
-    return fetch(
-        `${BASE_URL}${query}?fields=name,capital,population,flags,languages`,
-        options
-    ).then(response => response.json())
+  return fetch(
+    `${BASE_URL}${query}?fields=name,capital,population,flags,languages`,
+    options
+  ).then(response => response.json())
+    .then(data => {
+    console.log('data:', ...data);
+        return data;
+      })
         
 }
+    
