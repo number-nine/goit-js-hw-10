@@ -6,13 +6,14 @@ const DEBOUNCE_DELAY = 300;
 
 const searchEl = document.querySelector('#search-box');
 
-searchEl.addEventListener('input', onInput);
+searchEl.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 
 
 function onInput(e) {
+   
     e.preventDefault();
-    const query = e.currentTarget.value;
+    const query = purifyQuery(e.target.value);
 
     console.log(query);
 
@@ -26,6 +27,10 @@ function onInput(e) {
         // console.log({ message });
       });
 
+}
+
+function purifyQuery(queryString) {
+    return queryString.trim();
 }
 
 

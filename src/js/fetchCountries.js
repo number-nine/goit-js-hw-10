@@ -1,4 +1,5 @@
 const BASE_URL = 'https://restcountries.com/v3.1/name/';
+// ?fields=name,capital,population,flags.svg,languages
 // const query = '';
 
 export default function fetchCountries(query) {
@@ -8,8 +9,9 @@ export default function fetchCountries(query) {
     },
   };
 
-  return fetch(
-    `${BASE_URL}${query}?fields=name.official,capital,population,flags.svg,languages`,
-    options
-  ).then(response => response.json());
+    return fetch(
+        `${BASE_URL}${query}?fields=name,capital,population,flags,languages`,
+        options
+    ).then(response => response.json())
+        
 }
