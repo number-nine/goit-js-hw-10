@@ -36,7 +36,7 @@ function onInput(e) {
 
   fetchCountries(query)
     .then(countries => {
-      console.log('countries:', countries);
+      // console.log('countries:', countries);
       // if (countries.length > 10) {
       //   Notify.failure(
       //     'Too many matches found. Please enter a more specific name.'
@@ -50,8 +50,9 @@ function onInput(e) {
         // console.log(country);
       } else {
         console.log('countries collection');
-        // document.querySelector('.country-list').innerHTML =
-        //   countryList(countries);
+        console.log(countries);
+        document.querySelector('.country-list').innerHTML =
+          countryList(countries);
       }
     })
     .catch(alert => {
