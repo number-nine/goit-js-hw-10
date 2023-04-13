@@ -19,11 +19,44 @@ body {
   margin-bottom: 16px;
 }
 
-.country-list {
+.country-list, .country-info__stats-list {
   padding-left: 20px;
   list-style: none;
 }
 
-.country__flag{
+.country-list__element{
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+
+  margin-bottom: 20px;
+
+  font-size: 24px;
+}
+
+.country-list__flag{
   width: 60px;
+}
+
+.country-info {
+  padding-left: 20px;
+}
+.country-info__header {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.country-info__flag{
+  width: 80px;
+}
+
+.country-info__stat {
+  margin-bottom: 20px;
+  
+  font-size: 20px;
+}
+
+.country-info__stat-name{
+  font-weight: 600;
 }

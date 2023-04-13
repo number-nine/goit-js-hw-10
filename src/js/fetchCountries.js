@@ -1,10 +1,7 @@
 const BASE_URL = 'https://restcountries.com/v3.1/name/';
-// ?fields=name,capital,population,flags.svg,languages
-// const query = '';
 
 export default function fetchCountries(query) {
   const options = {
-    // simple: true,
     headers: {
       'Content-Type': 'application/json',
     },
@@ -16,13 +13,11 @@ export default function fetchCountries(query) {
   )
     .then(response => {
       if (!response.ok) {
-        // console.log(response);
         throw new Error('Oops, there is no country with that name');
       }
       return response.json();
     })
     .then(data => {
-      // console.log(data.length);
       if (data.length > 10) {
         throw new Error(
           'Too many matches found. Please enter a more specific name.'
@@ -34,7 +29,6 @@ export default function fetchCountries(query) {
 
 function transformData(data) {
   const countries = data.map(element => {
-    console.log(Object.values(element.languages));
     const country = {};
     ({
       name: { official: country.name },
@@ -45,6 +39,5 @@ function transformData(data) {
     } = element);
     return country;
   });
-  // console.log(countries);
   return countries;
 }
