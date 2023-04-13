@@ -23,10 +23,18 @@
     "notiflix": "^3.2.6"
   },
   "devDependencies": {
+    "@parcel/transformer-inline-string": "^2.6.0",
+    "@parcel/transformer-pug": "^2.6.0",
     "@parcel/transformer-sass": "^2.6.0",
+    "assert": "^2.0.0",
+    "buffer": "^6.0.3",
+    "os-browserify": "^0.3.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "parcel-transformer-pug-precompile": "^1.0.6",
+    "path-browserify": "^1.0.1",
+    "posthtml-include": "^1.7.4",
+    "process": "^0.11.10"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }
