@@ -3,7 +3,7 @@ const BASE_URL = 'https://restcountries.com/v3.1/name/';
 export function fetchCountries(query) {
   const options = {
     headers: {
-      'Content-Type': 'application/json',
+      'Accept': 'application/json',
     },
   };
 
